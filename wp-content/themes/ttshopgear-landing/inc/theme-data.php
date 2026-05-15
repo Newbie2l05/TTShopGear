@@ -606,6 +606,435 @@ function ttshopgear_get_site_data() {
 
 	$data = ttshopgear_localize_site_data($data);
 
+	$page_sections = array(
+		'downloads' => array(
+			array(
+				'eyebrow' => 'Tải xuống',
+				'title' => 'Driver, firmware và tiện ích theo đúng nhóm thiết bị',
+				'paragraphs' => array(
+					'Tại đây người dùng có thể tra đúng phần mềm tương ứng với bàn phím, chuột, tai nghe và hệ thiết bị streaming mà không cần tìm thủ công qua nhiều nguồn khác nhau.',
+					'Mỗi gói tải xuống được sắp xếp theo mục đích sử dụng thực tế như cập nhật firmware, quản lý RGB, tinh chỉnh macro, cấu hình DPI hoặc đồng bộ profile giữa nhiều thiết bị.',
+				),
+				'items' => array(
+					'Ưu tiên phiên bản ổn định đã kiểm thử với hệ sinh thái TTShopGear.',
+					'Đi kèm ghi chú phiên bản để biết thay đổi trước khi cập nhật.',
+					'Phân tách rõ công cụ cài đặt, firmware và tài liệu hướng dẫn.',
+				),
+			),
+			array(
+				'eyebrow' => 'Hướng dẫn',
+				'title' => 'Quy trình cài đặt an toàn và dễ kiểm tra lại',
+				'paragraphs' => array(
+					'Trước khi cập nhật, người dùng nên đóng các ứng dụng đang chiếm thiết bị như OBS, game launcher hoặc phần mềm macro khác để tránh lỗi nhận driver không đầy đủ.',
+					'Sau khi cài xong, website khuyến nghị kiểm tra lại profile, polling rate, EQ hoặc firmware version để chắc chắn thiết bị đã hoạt động đúng với bản cập nhật mới nhất.',
+				),
+				'items' => array(
+					'Cắm trực tiếp thiết bị vào cổng ổn định khi cập nhật firmware.',
+					'Sao lưu profile cũ trước khi reset hoặc flash firmware.',
+					'Liên hệ hỗ trợ nếu thiết bị không nhận sau khi cập nhật.',
+				),
+			),
+		),
+		'kb' => array(
+			array(
+				'eyebrow' => 'Kho kiến thức',
+				'title' => 'Tổng hợp hướng dẫn thiết lập và xử lý lỗi phổ biến',
+				'paragraphs' => array(
+					'Kho kiến thức tập trung vào các tình huống người dùng gặp nhiều nhất như thiết bị không nhận, RGB sai profile, tai nghe mất âm một bên, chuột không lưu DPI hoặc phím macro chạy không đúng thứ tự.',
+					'Nội dung được viết theo dạng từng bước ngắn, rõ đầu vào và kết quả mong đợi để người dùng tự kiểm tra nhanh trước khi phải gửi bảo hành hoặc chờ phản hồi kỹ thuật.',
+				),
+				'items' => array(
+					'Hướng dẫn thiết lập ban đầu cho từng nhóm sản phẩm.',
+					'Cách reset thiết bị về trạng thái ổn định.',
+					'Checklist kiểm tra driver, dây, cổng kết nối và firmware.',
+				),
+			),
+			array(
+				'eyebrow' => 'Tối ưu',
+				'title' => 'Tối ưu hiệu năng theo từng tình huống sử dụng',
+				'paragraphs' => array(
+					'Ngoài việc sửa lỗi, kho kiến thức còn hướng đến tối ưu trải nghiệm dùng thực tế như giảm độ trễ bàn phím, cân bằng pin cho chuột không dây, thiết lập sidetone hoặc preset âm thanh khi chơi FPS và stream.',
+					'Người dùng có thể áp dụng nhanh các cấu hình gợi ý để đạt trạng thái sử dụng tốt ngay cả khi chưa cần can thiệp quá sâu vào phần mềm chuyên dụng.',
+				),
+				'items' => array(
+					'Gợi ý profile cho FPS, MOBA, stream và làm việc dài giờ.',
+					'Thiết lập polling rate phù hợp để tránh hao pin không cần thiết.',
+					'Cách lưu onboard profile để dùng ổn định trên nhiều máy.',
+				),
+			),
+		),
+		'warranty' => array(
+			array(
+				'eyebrow' => 'Bảo hành',
+				'title' => 'Phạm vi bảo hành và điều kiện tiếp nhận',
+				'paragraphs' => array(
+					'TTShopGear tiếp nhận bảo hành đối với lỗi kỹ thuật phát sinh từ nhà sản xuất hoặc lỗi phần cứng xuất hiện trong điều kiện sử dụng đúng hướng dẫn đi kèm thiết bị.',
+					'Các trường hợp rơi vỡ, vào nước, cháy nổ do nguồn điện không phù hợp, tự ý sửa chữa hoặc mất tem nhận diện sẽ được kiểm tra riêng và có thể không nằm trong phạm vi bảo hành tiêu chuẩn.',
+				),
+				'items' => array(
+					'Chuẩn bị hóa đơn hoặc thông tin đơn hàng để đối chiếu.',
+					'Cung cấp serial, hình ảnh lỗi và mô tả tình trạng sử dụng.',
+					'Giữ lại phụ kiện chính nếu sản phẩm cần đổi mới nguyên bộ.',
+				),
+			),
+			array(
+				'eyebrow' => 'Quy trình',
+				'title' => 'Các bước xử lý sau khi gửi yêu cầu bảo hành',
+				'paragraphs' => array(
+					'Sau khi tiếp nhận thông tin, bộ phận kỹ thuật sẽ kiểm tra mô tả lỗi, xác minh phạm vi áp dụng và hướng dẫn gửi hàng hoặc xử lý phần mềm từ xa nếu thiết bị chưa cần mang đi bảo hành trực tiếp.',
+					'Trong suốt quá trình này, người dùng sẽ được cập nhật các mốc như đã nhận thiết bị, đang kiểm tra, chờ linh kiện, đổi mới hoặc hoàn tất trả lại sản phẩm.',
+				),
+				'items' => array(
+					'Thời gian phản hồi ban đầu trong giờ làm việc được rút gọn.',
+					'Ưu tiên chẩn đoán từ xa với lỗi phần mềm hoặc cấu hình.',
+					'Cập nhật tiến độ rõ ràng để người dùng dễ theo dõi.',
+				),
+			),
+		),
+		'returns' => array(
+			array(
+				'eyebrow' => 'Đổi trả',
+				'title' => 'Điều kiện đổi trả áp dụng theo trạng thái sản phẩm',
+				'paragraphs' => array(
+					'Đổi trả được xem xét trên tình trạng thực tế của sản phẩm, thời gian kể từ lúc nhận hàng và việc còn đủ phụ kiện, hộp, quà tặng đi kèm hoặc không.',
+					'Những trường hợp muốn đổi model, đổi màu hoặc đổi sang nhóm sản phẩm khác sẽ được hướng dẫn riêng để đảm bảo thông tin tồn kho và chênh lệch giá được xử lý minh bạch.',
+				),
+				'items' => array(
+					'Sản phẩm cần còn khả năng kiểm tra và đối chiếu nguyên trạng.',
+					'Quà tặng khuyến mại đi kèm cần hoàn lại nếu chính sách yêu cầu.',
+					'Phí vận chuyển phát sinh sẽ được thông báo trước khi xác nhận đổi trả.',
+				),
+			),
+			array(
+				'eyebrow' => 'Hoàn tiền',
+				'title' => 'Cách theo dõi tiến độ hoàn tiền hoặc đổi thiết bị',
+				'paragraphs' => array(
+					'Khi yêu cầu đổi trả được duyệt, TTShopGear sẽ xác nhận rõ hình thức xử lý gồm đổi sản phẩm tương đương, nâng cấp bù chênh lệch hoặc hoàn tiền về phương thức phù hợp.',
+					'Đối với các yêu cầu cần kiểm tra hàng thực tế, mốc thời gian xử lý sẽ bắt đầu từ lúc kho hoặc kỹ thuật xác nhận đã nhận được sản phẩm hoàn trả.',
+				),
+				'items' => array(
+					'Thông báo rõ thời hạn xử lý ở từng bước.',
+					'Có thể đối chiếu lại qua mã đơn hàng hoặc thông tin liên hệ.',
+					'Ưu tiên hoàn tất nhanh với các trường hợp đủ điều kiện rõ ràng.',
+				),
+			),
+		),
+		'contact' => array(
+			array(
+				'eyebrow' => 'Liên hệ',
+				'title' => 'Chọn đúng đầu mối để xử lý nhanh hơn',
+				'paragraphs' => array(
+					'TTShopGear phân luồng rõ giữa hỗ trợ kỹ thuật, hỗ trợ đơn hàng, hợp tác đối tác và các yêu cầu truyền thông để mỗi vấn đề được tiếp nhận đúng người ngay từ đầu.',
+					'Việc gửi đúng nhóm thông tin giúp rút ngắn thời gian hỏi lại, đồng thời hạn chế tình trạng xử lý chậm vì thiếu dữ liệu đầu vào cần thiết.',
+				),
+				'items' => array(
+					'Kỹ thuật: lỗi thiết bị, lỗi driver, lỗi firmware.',
+					'Đơn hàng: giao hàng, đổi trả, thanh toán, tình trạng mua hàng.',
+					'Hợp tác: reseller, creator, đội tuyển, affiliate.',
+				),
+			),
+			array(
+				'eyebrow' => 'Chuẩn bị',
+				'title' => 'Thông tin nên gửi kèm trong lần liên hệ đầu tiên',
+				'paragraphs' => array(
+					'Đối với vấn đề kỹ thuật, nên gửi kèm mã sản phẩm, serial, hệ điều hành đang dùng, ảnh hoặc video lỗi để đội hỗ trợ có thể chẩn đoán chính xác hơn.',
+					'Đối với đơn hàng, thông tin như mã đơn, tên người nhận, số điện thoại và thời điểm phát sinh vấn đề sẽ giúp việc tra cứu nhanh và hạn chế nhầm lẫn.',
+				),
+				'items' => array(
+					'Ghi rõ model thiết bị và phiên bản phần mềm liên quan.',
+					'Đính kèm ảnh lỗi hoặc mô tả thao tác tái hiện lỗi.',
+					'Ưu tiên dùng cùng email hoặc số điện thoại đã đặt hàng.',
+				),
+			),
+		),
+		'faqs' => array(
+			array(
+				'eyebrow' => 'FAQ',
+				'title' => 'Những câu hỏi phổ biến trước và sau khi mua',
+				'paragraphs' => array(
+					'Phần câu hỏi thường gặp giúp người dùng giải đáp nhanh các nội dung lặp lại nhiều nhất như thời gian giao hàng, phí vận chuyển, cách kiểm tra bảo hành, nơi tải phần mềm và quy trình thanh toán.',
+					'Cách trình bày ưu tiên ngắn gọn, thực tế và bám sát tình huống mà người mua thường gặp thay vì giải thích chung chung.',
+				),
+				'items' => array(
+					'Đơn hàng xử lý trong bao lâu sau khi đặt.',
+					'Khi nào nên dùng COD và khi nào nên dùng QR.',
+					'Cách kiểm tra sản phẩm còn hàng hoặc sắp có hàng.',
+				),
+			),
+			array(
+				'eyebrow' => 'Sau mua',
+				'title' => 'Giải đáp về phần mềm, bảo hành và đổi trả',
+				'paragraphs' => array(
+					'Sau khi mua, người dùng thường cần biết tải driver ở đâu, làm sao cập nhật firmware an toàn, khi nào thiết bị đủ điều kiện bảo hành và những bước cần chuẩn bị trước khi gửi yêu cầu hỗ trợ.',
+					'Trang FAQ đóng vai trò như lớp hướng dẫn đầu tiên để người dùng tự xử lý các vấn đề đơn giản trước khi cần tới hỗ trợ chuyên sâu.',
+				),
+				'items' => array(
+					'Nơi tải driver và firmware mới nhất.',
+					'Điều kiện bảo hành cơ bản và giấy tờ cần có.',
+					'Các bước gửi yêu cầu đổi trả hoặc hoàn tiền.',
+				),
+			),
+		),
+		'about' => array(
+			array(
+				'eyebrow' => 'Về chúng tôi',
+				'title' => 'TTShopGear xây dựng storefront theo hướng rõ ràng và thực dụng',
+				'paragraphs' => array(
+					'TTShopGear tập trung vào các nhóm gear gaming, streaming và linh kiện có tính ứng dụng cao, được trình bày theo ngữ cảnh sử dụng để người mua chọn nhanh hơn thay vì chỉ xem thông số rời rạc.',
+					'Toàn bộ hành trình từ trang chủ, danh mục, sản phẩm, giỏ hàng đến hỗ trợ sau mua được thiết kế đồng bộ nhằm tạo cảm giác nhất quán và đáng tin cậy.',
+				),
+				'items' => array(
+					'Ưu tiên hiệu năng, độ ổn định và trải nghiệm dùng thật.',
+					'Giảm bớt thông tin nhiễu, giữ cách trình bày có định hướng.',
+					'Đồng bộ giao diện giữa marketing, bán hàng và hỗ trợ.',
+				),
+			),
+			array(
+				'eyebrow' => 'Định hướng',
+				'title' => 'Nguyên tắc vận hành của TTShopGear',
+				'paragraphs' => array(
+					'Chúng tôi ưu tiên mô tả đúng bản chất sản phẩm, nêu rõ điểm mạnh, giới hạn và nhóm người dùng phù hợp thay vì cố làm nội dung theo hướng quá quảng cáo.',
+					'Bên cạnh bán hàng, website cũng được xây như một trung tâm vận hành nội dung, nơi người dùng có thể quay lại để tra cứu phần mềm, chính sách và hướng dẫn sau này.',
+				),
+				'items' => array(
+					'Nội dung rõ ràng, tránh hứa hẹn mơ hồ.',
+					'Hỗ trợ sau mua là một phần của sản phẩm.',
+					'Luôn ưu tiên khả năng mở rộng và bảo trì lâu dài.',
+				),
+			),
+		),
+		'careers' => array(
+			array(
+				'eyebrow' => 'Tuyển dụng',
+				'title' => 'Môi trường làm việc đề cao chất lượng thực thi',
+				'paragraphs' => array(
+					'TTShopGear phù hợp với những người thích làm sản phẩm thực tế, nhìn thấy tác động trực tiếp của từng thay đổi lên trải nghiệm mua sắm, nội dung và hiệu quả vận hành.',
+					'Đội ngũ làm việc theo hướng gọn, quyết định nhanh nhưng vẫn đặt tiêu chuẩn cao về chi tiết, độ rõ ràng và khả năng duy trì lâu dài của hệ thống.',
+				),
+				'items' => array(
+					'Ưu tiên tư duy giải quyết vấn đề thay vì chỉ hoàn thành tác vụ.',
+					'Làm việc liên phòng ban giữa nội dung, vận hành và kỹ thuật.',
+					'Khuyến khích cải tiến liên tục dựa trên hành vi người dùng thật.',
+				),
+			),
+			array(
+				'eyebrow' => 'Cơ hội',
+				'title' => 'Những nhóm vai trò thường cần trong hệ sinh thái storefront',
+				'paragraphs' => array(
+					'Các vị trí có thể mở rộng theo nhu cầu gồm vận hành thương mại điện tử, quản trị danh mục, nội dung sản phẩm, chăm sóc khách hàng, kỹ thuật WordPress hoặc tối ưu hiệu suất giao diện.',
+					'Điểm chung của các vị trí này là cần khả năng phối hợp tốt, nhìn ra vấn đề thật của người dùng và chủ động cải thiện quy trình làm việc hiện có.',
+				),
+				'items' => array(
+					'Vận hành catalog và nội dung sản phẩm.',
+					'Chăm sóc khách hàng và hỗ trợ sau bán.',
+					'Kỹ thuật theme, WooCommerce và tối ưu trải nghiệm.',
+				),
+			),
+		),
+		'press' => array(
+			array(
+				'eyebrow' => 'Báo chí',
+				'title' => 'Thông tin dành cho truyền thông và creator',
+				'paragraphs' => array(
+					'Trang này tổng hợp định hướng truyền thông, cách mô tả thương hiệu và các đầu mối liên hệ phù hợp cho báo chí, reviewer hoặc creator cần xác minh thông tin sản phẩm.',
+					'TTShopGear ưu tiên cung cấp dữ liệu nhất quán để các bài viết, video hoặc nội dung giới thiệu không bị lệch với trải nghiệm thực tế trên website.',
+				),
+				'items' => array(
+					'Thông tin mô tả thương hiệu ngắn gọn và nhất quán.',
+					'Đầu mối liên hệ khi cần xác minh sản phẩm hoặc chương trình.',
+					'Định hướng sử dụng ảnh và nội dung giới thiệu đúng ngữ cảnh.',
+				),
+			),
+			array(
+				'eyebrow' => 'Tài nguyên',
+				'title' => 'Cách tiếp cận tài liệu và hình ảnh sản phẩm',
+				'paragraphs' => array(
+					'Khi có chiến dịch mới hoặc bài giới thiệu sản phẩm, TTShopGear có thể chuẩn bị bộ tài nguyên gồm ảnh, mô tả ngắn, điểm nổi bật và bối cảnh sử dụng để việc lên nội dung diễn ra nhanh hơn.',
+					'Các tài nguyên này nên được dùng kèm với phần mô tả giới hạn, chính sách và khả năng tương thích để nội dung truyền thông giữ được độ chính xác.',
+				),
+				'items' => array(
+					'Ảnh sản phẩm và mô tả phải bám đúng model đang bán.',
+					'Nội dung review hoặc giới thiệu nên ghi rõ tình huống sử dụng.',
+					'Cần xác minh thông tin giá và tồn kho theo thời điểm đăng.',
+				),
+			),
+		),
+		'partners' => array(
+			array(
+				'eyebrow' => 'Đối tác',
+				'title' => 'Các mô hình hợp tác có thể triển khai cùng TTShopGear',
+				'paragraphs' => array(
+					'TTShopGear mở cho các mô hình hợp tác như đối tác nội dung, creator, reseller, đội tuyển, phòng máy hoặc chương trình bundle theo nhu cầu triển khai cụ thể.',
+					'Mục tiêu của từng mô hình là đưa đúng cấu hình thiết bị và thông điệp phù hợp tới đúng nhóm người dùng thay vì áp dụng cùng một cách làm cho mọi trường hợp.',
+				),
+				'items' => array(
+					'Hợp tác tài trợ hoặc cung cấp gear cho đội tuyển và creator.',
+					'Chuẩn hóa catalog và nội dung cho kênh reseller.',
+					'Thiết kế gói bundle theo mục tiêu bán hàng hoặc trải nghiệm.',
+				),
+			),
+			array(
+				'eyebrow' => 'Triển khai',
+				'title' => 'Quy trình làm việc để đảm bảo phối hợp rõ ràng',
+				'paragraphs' => array(
+					'Các đề xuất hợp tác nên bắt đầu từ nhu cầu cụ thể như cần tài trợ thiết bị, mở rộng kênh bán hay tạo chiến dịch creator để đội ngũ có thể đánh giá đúng phạm vi và nguồn lực.',
+					'Sau khi thống nhất định hướng, TTShopGear sẽ chuẩn hóa đầu việc, thời gian, nội dung truyền thông và tiêu chí bàn giao để việc phối hợp không bị rời rạc.',
+				),
+				'items' => array(
+					'Xác định rõ mục tiêu, đối tượng và khối lượng triển khai.',
+					'Thống nhất timeline và đầu mối phụ trách ngay từ đầu.',
+					'Đo hiệu quả dựa trên kết quả thực tế thay vì cảm tính.',
+				),
+			),
+		),
+		'affiliates' => array(
+			array(
+				'eyebrow' => 'Affiliate',
+				'title' => 'Chương trình phù hợp với nội dung có định hướng rõ',
+				'paragraphs' => array(
+					'Affiliate tại TTShopGear phù hợp với reviewer, creator hoặc publisher có khả năng giải thích sản phẩm theo cách mạch lạc, trung thực và giúp người xem ra quyết định mua dễ hơn.',
+					'Website được tổ chức theo ngôn ngữ thiết kế đồng bộ, giúp nội dung affiliate dẫn traffic về một trải nghiệm storefront có độ tin cậy và nhất quán cao.',
+				),
+				'items' => array(
+					'Phù hợp với nội dung review, setup guide hoặc đề xuất cấu hình.',
+					'Ưu tiên traffic có nhu cầu thật thay vì lượt bấm không mục tiêu.',
+					'Trải nghiệm từ nội dung sang trang sản phẩm được giữ liền mạch.',
+				),
+			),
+			array(
+				'eyebrow' => 'Nguyên tắc',
+				'title' => 'Quyền lợi và cách làm nội dung nên áp dụng',
+				'paragraphs' => array(
+					'Để chương trình vận hành bền vững, nội dung affiliate cần mô tả đúng model, đúng giá trị sử dụng và tránh tạo kỳ vọng sai về tính năng, bảo hành hoặc khả năng tương thích.',
+					'Người làm nội dung nên ưu tiên các bài viết, video hoặc bài đăng có chiều sâu thay vì chỉ chèn link, bởi chuyển đổi tốt nhất thường đến từ mức độ tin tưởng và khả năng giải thích rõ ràng.',
+				),
+				'items' => array(
+					'Không dùng thông tin sai lệch để tăng chuyển đổi ngắn hạn.',
+					'Ưu tiên nội dung có trải nghiệm dùng thực tế.',
+					'Gắn link trong bối cảnh phù hợp với nhu cầu người xem.',
+				),
+			),
+		),
+		'privacy' => array(
+			array(
+				'eyebrow' => 'Chính sách bảo mật',
+				'title' => 'Những loại dữ liệu được thu thập và mục đích sử dụng',
+				'paragraphs' => array(
+					'TTShopGear thu thập các thông tin cần thiết cho việc xử lý đơn hàng, giao hàng, hỗ trợ kỹ thuật, bảo hành và liên hệ lại khi người dùng chủ động yêu cầu.',
+					'Thông tin này có thể bao gồm họ tên, số điện thoại, email, địa chỉ nhận hàng, nội dung liên hệ và dữ liệu kỹ thuật liên quan tới thiết bị nếu phát sinh hỗ trợ sau mua.',
+				),
+				'items' => array(
+					'Dữ liệu được dùng cho mục đích vận hành đơn hàng và hỗ trợ.',
+					'Không thu thập vượt quá phạm vi cần thiết cho tác vụ đang xử lý.',
+					'Thông tin tiếp thị chỉ dùng khi người dùng có đồng ý phù hợp.',
+				),
+			),
+			array(
+				'eyebrow' => 'Bảo vệ dữ liệu',
+				'title' => 'Cách dữ liệu được lưu trữ và kiểm soát',
+				'paragraphs' => array(
+					'Website ưu tiên kiểm soát quyền truy cập nội bộ, giảm lộ dữ liệu không cần thiết và chỉ giữ lại thông tin trong phạm vi phục vụ vận hành, bảo hành hoặc nghĩa vụ liên quan.',
+					'Khi có yêu cầu cập nhật hoặc đối chiếu thông tin, người dùng nên liên hệ bằng kênh đã dùng khi đặt hàng để việc xác minh được thực hiện nhanh và chính xác hơn.',
+				),
+				'items' => array(
+					'Giới hạn truy cập theo đúng nhóm công việc.',
+					'Đối chiếu lại dữ liệu khi có yêu cầu hỗ trợ nhạy cảm.',
+					'Ưu tiên xử lý minh bạch và có thể truy vết theo đơn hàng.',
+				),
+			),
+		),
+		'terms' => array(
+			array(
+				'eyebrow' => 'Điều khoản dịch vụ',
+				'title' => 'Điều kiện xác nhận đơn hàng và phạm vi áp dụng',
+				'paragraphs' => array(
+					'Đơn hàng được xác nhận dựa trên thông tin người mua cung cấp, tình trạng tồn kho, giá tại thời điểm đặt và khả năng đáp ứng vận chuyển theo khu vực giao nhận.',
+					'Trong trường hợp có sai lệch về tồn kho, cấu hình hoặc thông tin liên quan đến thanh toán, TTShopGear có quyền liên hệ xác minh trước khi hoàn tất xử lý đơn hàng.',
+				),
+				'items' => array(
+					'Giá bán và khuyến mại áp dụng theo thời điểm xác nhận.',
+					'Đơn hàng có thể cần đối chiếu thêm trước khi giao.',
+					'Người mua cần cung cấp thông tin chính xác để tránh chậm xử lý.',
+				),
+			),
+			array(
+				'eyebrow' => 'Trách nhiệm',
+				'title' => 'Giới hạn trách nhiệm và các trường hợp liên quan',
+				'paragraphs' => array(
+					'TTShopGear chịu trách nhiệm trong phạm vi cung cấp đúng sản phẩm, thông tin, chính sách hỗ trợ và quy trình xử lý đã công bố trên website hoặc qua kênh liên hệ chính thức.',
+					'Những vấn đề phát sinh do sử dụng sai hướng dẫn, tự ý can thiệp phần cứng, cài phần mềm không tương thích hoặc tác động vật lý từ phía người dùng có thể nằm ngoài phạm vi xử lý tiêu chuẩn.',
+				),
+				'items' => array(
+					'Điều khoản mua bán cần được đọc cùng mục bảo hành và đổi trả.',
+					'Thông tin chính thức chỉ được xác nhận qua kênh của TTShopGear.',
+					'Cần kiểm tra kỹ model, cấu hình và tương thích trước khi mua.',
+				),
+			),
+		),
+		'cookies' => array(
+			array(
+				'eyebrow' => 'Cookie',
+				'title' => 'Cookie được dùng để giữ trải nghiệm ổn định',
+				'paragraphs' => array(
+					'Website sử dụng cookie và cơ chế lưu phiên để ghi nhớ trạng thái cơ bản như giỏ hàng, lựa chọn đang thao tác hoặc một số thông tin giúp quá trình duyệt và mua hàng mượt hơn.',
+					'Những dữ liệu này không nhằm thay thế thông tin nhận diện pháp lý mà chủ yếu phục vụ trải nghiệm vận hành, hiệu năng giao diện và sự liền mạch của phiên truy cập.',
+				),
+				'items' => array(
+					'Ghi nhớ trạng thái giỏ hàng và các tương tác cần thiết.',
+					'Hỗ trợ điều hướng nhanh hơn giữa các bước mua hàng.',
+					'Giảm thao tác lặp lại khi người dùng quay lại phiên trước đó.',
+				),
+			),
+			array(
+				'eyebrow' => 'Quản lý',
+				'title' => 'Người dùng có thể chủ động kiểm soát cookie',
+				'paragraphs' => array(
+					'Trong hầu hết trình duyệt hiện nay, người dùng có thể xóa hoặc chặn cookie theo từng website. Việc này có thể ảnh hưởng tới các tính năng như lưu giỏ hàng, đăng nhập hoặc một số bước thanh toán.',
+					'TTShopGear khuyến nghị chỉ tắt những nhóm cookie không cần thiết nếu người dùng muốn tối ưu quyền riêng tư mà vẫn giữ trải nghiệm sử dụng cơ bản của website.',
+				),
+				'items' => array(
+					'Có thể xóa cookie trực tiếp trong phần cài đặt trình duyệt.',
+					'Việc chặn cookie có thể làm gián đoạn vài tính năng storefront.',
+					'Nên kiểm tra lại giỏ hàng và đăng nhập sau khi xóa cookie.',
+				),
+			),
+		),
+		'accessibility' => array(
+			array(
+				'eyebrow' => 'Khả năng truy cập',
+				'title' => 'Thiết kế hướng đến khả năng đọc và thao tác rõ ràng',
+				'paragraphs' => array(
+					'TTShopGear ưu tiên tương phản đủ tốt, vùng thao tác rõ, cấu trúc tiêu đề mạch lạc và trạng thái hover hoặc focus dễ nhận biết để nhiều nhóm người dùng có thể sử dụng thuận tiện hơn.',
+					'Điều này đặc biệt quan trọng với các luồng như tìm kiếm, chọn sản phẩm, giỏ hàng và checkout, nơi người dùng cần nhìn thấy trạng thái hiện tại một cách nhanh và chính xác.',
+				),
+				'items' => array(
+					'Giữ typography dễ đọc và khoảng cách hợp lý.',
+					'Trạng thái tương tác được thể hiện nhất quán toàn site.',
+					'Các luồng quan trọng được tối ưu cho thao tác liên tục.',
+				),
+			),
+			array(
+				'eyebrow' => 'Cải thiện',
+				'title' => 'Cam kết tiếp tục tối ưu trong các bản cập nhật sau',
+				'paragraphs' => array(
+					'Khả năng truy cập không phải hạng mục làm một lần rồi dừng lại. Mỗi thay đổi về layout, checkout, menu hoặc điều hướng đều cần được xem lại để tránh làm giảm trải nghiệm của người dùng.',
+					'TTShopGear tiếp tục ưu tiên các cải tiến giúp website dễ đọc hơn, ít gây rối hơn và có logic hiển thị nhất quán hơn trong cả phần bán hàng lẫn hỗ trợ.',
+				),
+				'items' => array(
+					'Đánh giá lại sau mỗi thay đổi lớn về giao diện.',
+					'Ưu tiên sửa các điểm gây khó đọc hoặc khó thao tác trước.',
+					'Duy trì ngôn ngữ thiết kế đồng bộ để giảm nhiễu nhận thức.',
+				),
+			),
+		),
+	);
+
+	foreach ($page_sections as $slug => $sections) {
+		if (isset($data['pages'][ $slug ])) {
+			$data['pages'][ $slug ]['sections'] = $sections;
+		}
+	}
+
 	return $data;
 }
 

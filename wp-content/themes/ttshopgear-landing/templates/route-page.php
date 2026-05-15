@@ -151,6 +151,41 @@ get_header();
 				</div>
 			</div>
 		</section>
+
+		<?php if (! empty($page['sections'])) : ?>
+			<section class="tt-section">
+				<div class="tt-container">
+					<div class="tt-section-heading">
+						<span>Nội dung chi tiết</span>
+						<h2><?php echo esc_html($page['title']); ?></h2>
+					</div>
+					<div class="tt-article-grid">
+						<?php foreach ($page['sections'] as $section) : ?>
+							<article class="tt-article-card">
+								<?php if (! empty($section['eyebrow'])) : ?>
+									<span class="tt-route-badge tt-route-badge--inline"><?php echo esc_html($section['eyebrow']); ?></span>
+								<?php endif; ?>
+								<h3><?php echo esc_html($section['title']); ?></h3>
+								<?php if (! empty($section['paragraphs'])) : ?>
+									<div class="tt-article-copy">
+										<?php foreach ($section['paragraphs'] as $paragraph) : ?>
+											<p><?php echo esc_html($paragraph); ?></p>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+								<?php if (! empty($section['items'])) : ?>
+									<ul class="tt-article-list">
+										<?php foreach ($section['items'] as $item) : ?>
+											<li><?php echo esc_html($item); ?></li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
+							</article>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</section>
+		<?php endif; ?>
 	<?php endif; ?>
 </main>
 <?php

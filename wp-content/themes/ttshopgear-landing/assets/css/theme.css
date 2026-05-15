@@ -1554,6 +1554,70 @@ svg {
   line-height: 1.7;
 }
 
+.tt-route-badge--inline {
+  display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.tt-article-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tt-article-card {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(62, 214, 240, 0.08), transparent 32%),
+    rgba(31, 31, 31, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.tt-article-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.tt-article-copy {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.tt-article-copy p {
+  margin: 0;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+
+.tt-article-list {
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tt-article-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--foreground);
+  line-height: 1.7;
+}
+
+.tt-article-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72rem;
+  left: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 0.22rem rgba(62, 214, 240, 0.16);
+}
+
 .tt-empty-state {
   padding: 2rem;
   text-align: center;
@@ -2328,6 +2392,7 @@ svg {
 
   .tt-kpi-grid,
   .tt-page-grid,
+  .tt-article-grid,
   .tt-spec-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
