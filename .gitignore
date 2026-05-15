@@ -1,0 +1,11 @@
+wp-config.php
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+error_log
+PaxHeaders/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup*/
+wp-content/backups/
