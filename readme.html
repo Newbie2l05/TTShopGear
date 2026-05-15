@@ -1,87 +1,38 @@
 # TTShopGear
 
-TTShopGear là website WordPress + WooCommerce cho cửa hàng gear gaming, được tùy biến giao diện đồng bộ theo landing page riêng và tối ưu trải nghiệm mua sắm bằng tiếng Việt.
+Storefront WordPress + WooCommerce cho cửa hàng gear gaming, được tùy biến giao diện riêng theo phong cách landing page, đồng bộ toàn bộ trải nghiệm mua sắm bằng tiếng Việt.
 
-## Tính năng chính
+## Demo tính năng
 
-- Giao diện storefront đồng bộ toàn site
-- Trang chủ landing style tùy biến riêng
-- WooCommerce tích hợp đầy đủ:
-  - danh mục sản phẩm
-  - chi tiết sản phẩm
-  - tìm kiếm sản phẩm
-  - giỏ hàng
-  - thanh toán
-  - tài khoản khách hàng
-- Live search gợi ý sản phẩm khi gõ
+- Giao diện storefront custom đồng bộ toàn site
+- Trang chủ dạng landing page
+- Danh mục, chi tiết sản phẩm, tìm kiếm, giỏ hàng, checkout, tài khoản
+- Live search gợi ý sản phẩm theo từ khóa
 - Thêm giỏ hàng bằng AJAX
-- Thanh toán:
-  - COD
-  - QR thanh toán VietQR / MoMo quét được
-- Form checkout tiếng Việt
+- Checkout tiếng Việt
 - Chọn tỉnh / thành phố và phường / xã theo dữ liệu Việt Nam
-- Toàn bộ giá hiển thị theo VND
+- Thanh toán COD
+- Thanh toán QR động qua VietQR, MoMo quét được và tự điền số tiền đơn hàng
+- Giá hiển thị theo VND
 
-## Công nghệ sử dụng
+## Stack
 
 - WordPress
 - WooCommerce
 - PHP
 - JavaScript
 - CSS custom
-- VietQR Quick Link cho QR thanh toán động
 
-## Cấu trúc đáng chú ý
+## Cấu trúc chính
 
-- `wp-content/themes/ttshopgear-landing`
-  - theme custom chính
-- `wp-content/themes/ttshopgear-landing/assets/css/theme.css`
-  - toàn bộ style giao diện
-- `wp-content/themes/ttshopgear-landing/assets/js/theme.js`
-  - logic frontend
-- `wp-content/themes/ttshopgear-landing/functions.php`
-  - hook WordPress / WooCommerce
-- `wp-content/themes/ttshopgear-landing/inc/class-ttshopgear-gateway-momo-qr.php`
-  - gateway QR thanh toán
-- `wp-content/themes/ttshopgear-landing/assets/data/vn-admin-units.json`
-  - dữ liệu 34 tỉnh thành và phường/xã
-
-## Thanh toán QR
-
-Hệ thống đang dùng VietQR động để tạo QR thanh toán theo đúng tổng tiền đơn hàng.
-
-Thông tin cấu hình hiện tại:
-
-- Ngân hàng: MB Bank
-- Số tài khoản: `1234567872005`
-- Tên tài khoản: `LAM CHI THANH`
-
-Người dùng có thể dùng MoMo để quét mã VietQR và app sẽ tự điền sẵn số tiền.
-
-## Chạy local
-
-Ví dụ môi trường local:
-
-- Laragon
-- PHP 8.x
-- MySQL / MariaDB
-- WordPress + WooCommerce
-
-Các bước cơ bản:
-
-1. Clone source về thư mục web local.
-2. Import database.
-3. Tạo file `wp-config.php` theo môi trường máy.
-4. Cài plugin WooCommerce.
-5. Truy cập site và cấu hình permalink / payment nếu cần.
-
-## Lưu ý
-
-- Không commit `wp-config.php`
-- Nên dùng UTF-8
-- Nếu sửa CSS/JS mà chưa thấy đổi, hãy hard refresh trình duyệt
-
-## Repository
-
-```bash
-git clone https://github.com/Newbie2l05/TTShopGear.git
+```text
+wp-content/
+└── themes/
+    └── ttshopgear-landing/
+        ├── assets/
+        │   ├── css/
+        │   ├── js/
+        │   └── data/
+        ├── inc/
+        ├── templates/
+        └── woocommerce/
