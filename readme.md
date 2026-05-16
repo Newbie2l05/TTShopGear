@@ -155,53 +155,11 @@ http://localhost/TTShopGear
 
 ---
 
-# 🔑 Tài khoản demo (nếu có)
-
-```txt
-Admin:
-Username: admin
-Password: admin123
-
-Khách hàng:
-Username: customer
-Password: customer123
-```
-
-_(Có thể thay đổi tùy cấu hình thực tế)_
-
----
-
-# 🖼️ Hình ảnh minh họa hệ thống
-
-## Trang chủ
-- Hero banner
-- Danh mục sản phẩm
-- Sản phẩm nổi bật
-
-## Trang sản phẩm
-- Thông tin chi tiết
-- Hình ảnh sản phẩm
-- Đánh giá
-
-## Trang thanh toán
-- Form checkout
-- Thanh toán COD / MoMo QR
-
----
-
 # 🎥 Link video demo
 
 ## Video Demo Project
 
 👉 https://drive.google.com/file/d/1i8xnbLaOgCZH5_ZE2oyUTr7EsrHqsDp0/view?usp=drive_link
-
----
-
-# 🌐 Link online đã deploy
-
-## Website Online
-
-👉 https://ttshopgear.free.nf/
 
 ---
 
