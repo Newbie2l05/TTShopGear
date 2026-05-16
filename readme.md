@@ -109,3 +109,125 @@ Hệ thống được xây dựng bằng **WordPress + WooCommerce** với giao 
 
 ```bash
 git clone https://github.com/your-repository/TTShopGear.git
+```
+
+---
+
+## 2. Cấu hình WordPress
+
+Tạo file `wp-config.php`
+
+```php
+define('DB_NAME', 'ttshopgear');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
+define('DB_HOST', 'localhost');
+```
+
+---
+
+## 3. Import Database
+
+- Tạo database `ttshopgear`
+- Import file SQL (nếu có)
+
+---
+
+## 4. Kích hoạt Theme & Plugin
+
+- Kích hoạt theme `TTShopGear Landing`
+- Kích hoạt plugin WooCommerce
+
+---
+
+# ▶️ Hướng dẫn chạy project
+
+## Chạy local bằng Laragon/XAMPP
+
+1. Khởi động Apache và MySQL
+2. Copy source vào thư mục `www`
+3. Import database
+4. Truy cập:
+
+```bash
+http://localhost/TTShopGear
+```
+
+---
+
+# 🔑 Tài khoản demo (nếu có)
+
+```txt
+Admin:
+Username: admin
+Password: admin123
+
+Khách hàng:
+Username: customer
+Password: customer123
+```
+
+_(Có thể thay đổi tùy cấu hình thực tế)_
+
+---
+
+# 🖼️ Hình ảnh minh họa hệ thống
+
+## Trang chủ
+- Hero banner
+- Danh mục sản phẩm
+- Sản phẩm nổi bật
+
+## Trang sản phẩm
+- Thông tin chi tiết
+- Hình ảnh sản phẩm
+- Đánh giá
+
+## Trang thanh toán
+- Form checkout
+- Thanh toán COD / MoMo QR
+
+---
+
+# 🎥 Link video demo
+
+## Video Demo Project
+
+👉 https://drive.google.com/file/d/1i8xnbLaOgCZH5_ZE2oyUTr7EsrHqsDp0/view?usp=drive_link
+
+---
+
+# 🌐 Link online đã deploy
+
+## Website Online
+
+👉 https://ttshopgear.free.nf/
+
+---
+
+# 📁 Cấu trúc dự án
+
+```bash
+TTShopGear/
+├── wp-content/
+├── themes/
+├── plugins/
+├── assets/
+├── README.md
+└── database.sql
+```
+
+---
+
+# 📄 License
+
+Dự án được phát triển phục vụ mục đích học tập và nghiên cứu.
+
+---
+
+<div align="center">
+
+## ⚡ TTShopGear
+### Premium Gaming Gear E-Commerce
+
+</div>
